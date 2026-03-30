@@ -4,10 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Joren Cools</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="favicon.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
+  <!-- WAVE FLOOD TRANSITION CANVAS -->
+  <canvas id="wave-canvas" aria-hidden="true"></canvas>
+
+  <!-- MORPHING SVG BLOBS (replace old CSS blobs) -->
+  <div class="blob-svg-wrap" aria-hidden="true">
+    <svg class="blob-svg blob-svg-1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#a8c4ff">
+        <animate attributeName="d" dur="12s" repeatCount="indefinite"
+          values="M200,80 C270,60 340,130 360,200 C380,270 330,350 260,370 C190,390 110,360 80,290 C50,220 60,130 110,90 C140,70 170,90 200,80Z;M200,70 C280,50 360,110 370,200 C380,290 310,370 230,380 C150,390 70,340 60,260 C50,180 90,100 150,75 C170,65 185,75 200,70Z;M200,90 C260,55 350,120 365,205 C380,285 320,365 245,375 C170,385 90,345 70,270 C50,195 80,110 140,82 C165,68 185,100 200,90Z;M200,80 C270,60 340,130 360,200 C380,270 330,350 260,370 C190,390 110,360 80,290 C50,220 60,130 110,90 C140,70 170,90 200,80Z"
+          calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+      </path>
+    </svg>
+    <svg class="blob-svg blob-svg-2" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#c5d9ff">
+        <animate attributeName="d" dur="15s" repeatCount="indefinite"
+          values="M200,75 C275,55 355,115 368,198 C381,282 322,362 242,378 C162,394 78,352 58,272 C38,192 82,106 152,78 C172,68 188,82 200,75Z;M200,85 C265,62 348,128 362,210 C376,292 318,368 238,382 C158,396 72,358 56,278 C40,198 78,114 148,84 C170,72 190,95 200,85Z;M200,68 C278,48 360,108 372,192 C384,276 326,360 246,376 C166,392 80,348 62,268 C44,188 88,102 156,76 C176,66 186,76 200,68Z;M200,75 C275,55 355,115 368,198 C381,282 322,362 242,378 C162,394 78,352 58,272 C38,192 82,106 152,78 C172,68 188,82 200,75Z"
+          calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+      </path>
+    </svg>
+    <svg class="blob-svg blob-svg-3" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#bdd0ff">
+        <animate attributeName="d" dur="10s" repeatCount="indefinite"
+          values="M200,82 C268,58 342,118 358,198 C374,278 326,356 252,374 C178,392 98,358 72,284 C46,210 72,122 138,84 C162,68 182,96 200,82Z;M200,72 C272,50 350,112 364,194 C378,276 328,358 254,376 C180,394 94,356 70,280 C46,204 74,116 142,78 C168,62 186,88 200,72Z;M200,88 C266,64 346,124 360,204 C374,282 322,362 248,380 C174,396 92,360 68,282 C44,204 72,118 140,82 C164,66 186,100 200,88Z;M200,82 C268,58 342,118 358,198 C374,278 326,356 252,374 C178,392 98,358 72,284 C46,210 72,122 138,84 C162,68 182,96 200,82Z"
+          calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"/>
+      </path>
+    </svg>
+  </div>
 
   <nav id="navbar">
     <a class="nav-logo" href="#home">Joren.</a>
@@ -23,14 +54,11 @@
   </nav>
   <div class="nav-overlay" id="nav-overlay"></div>
 
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
-
   <section id="home">
+    <canvas id="hero-particles"></canvas>
     <div class="hero-inner">
       <span class="hero-tag fade-up" style="--d:0ms">👋 Hallo daar</span>
-      <h1 class="fade-up" style="--d:120ms">Hoi, ik ben<br><span class="accent">Joren.</span></h1>
+      <h1 class="fade-up" style="--d:120ms">Hoi, ik ben<br><span class="accent" id="name-accent" data-text="Joren.">Joren.</span></h1>
       <p class="hero-sub fade-up" style="--d:240ms">
         Ik ben 20 jaar oud en dit is mijn kleine plekje op het internet.
         Kijk gerust rond en leer me een beetje beter kennen.
@@ -42,7 +70,15 @@
     </div>
   </section>
 
-  <hr class="divider"/>
+  <div class="wave-divider wave-divider--1" aria-hidden="true">
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="rgba(59,111,212,0.10)">
+        <animate attributeName="d" dur="6s" repeatCount="indefinite"
+          values="M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z;M0,24 C240,0 480,48 720,24 C960,0 1200,48 1440,24 L1440,48 L0,48 Z;M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z"
+          calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+      </path>
+    </svg>
+  </div>
 
   <section id="about">
     <span class="about-label scroll-reveal">Over mij</span>
@@ -104,7 +140,15 @@
     </div>
   </section>
 
-  <hr class="divider"/>
+  <div class="wave-divider wave-divider--2" aria-hidden="true">
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="rgba(59,111,212,0.10)">
+        <animate attributeName="d" dur="8s" repeatCount="indefinite"
+          values="M0,24 C360,0 720,48 1080,24 C1200,12 1320,36 1440,24 L1440,48 L0,48 Z;M0,24 C360,48 720,0 1080,24 C1200,36 1320,12 1440,24 L1440,48 L0,48 Z;M0,24 C360,0 720,48 1080,24 C1200,12 1320,36 1440,24 L1440,48 L0,48 Z"
+          calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+      </path>
+    </svg>
+  </div>
 
   <section id="opleiding">
     <span class="about-label scroll-reveal">Opleiding</span>
@@ -159,7 +203,15 @@
     </div>
   </section>
 
-  <hr class="divider"/>
+  <div class="wave-divider wave-divider--3" aria-hidden="true">
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="rgba(59,111,212,0.10)">
+        <animate attributeName="d" dur="7s" repeatCount="indefinite"
+          values="M0,12 C180,36 360,0 540,24 C720,48 900,0 1080,24 C1260,48 1380,12 1440,20 L1440,48 L0,48 Z;M0,24 C180,0 360,48 540,24 C720,0 900,48 1080,24 C1260,0 1380,36 1440,20 L1440,48 L0,48 Z;M0,12 C180,36 360,0 540,24 C720,48 900,0 1080,24 C1260,48 1380,12 1440,20 L1440,48 L0,48 Z"
+          calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+      </path>
+    </svg>
+  </div>
 
   <section id="skills">
     <span class="about-label scroll-reveal">Vaardigheden</span>
@@ -252,7 +304,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        <a href="mailto:coolsjoren@gmail.com" class="footer-link" aria-label="Email">
+        <a href="/cdn-cgi/l/email-protection#7c1f1313100f16130e19123c1b111d1510521f1311" class="footer-link" aria-label="Email">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           E-mail
         </a>
@@ -264,7 +316,207 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    /* ── WAVE FLOOD TRANSITION ── */
+    (function () {
+      const canvas = document.getElementById('wave-canvas');
+      const ctx    = canvas.getContext('2d');
+      let W, H;
+
+      function resize() {
+        W = canvas.width  = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // Smooth easing
+      function easeOutSine(t) { return Math.sin(t * Math.PI / 2); }
+      function easeInSine(t)  { return 1 - Math.cos(t * Math.PI / 2); }
+      function easeInOutSine(t){ return -(Math.cos(Math.PI * t) - 1) / 2; }
+
+      // Draw multiple layered waves
+      // mode: 'rise'  — surface climbs from bottom to top
+      //       'sink'  — surface sinks back down out of bottom
+      function drawFrame(progress, phase, mode) {
+        ctx.clearRect(0, 0, W, H);
+
+        const layers = [
+          { alpha: 0.30, ampMult: 1.4,  freqMult: 1.0,  phaseOff:  0.0,  yOff:  14 },
+          { alpha: 0.55, ampMult: 0.9,  freqMult: 1.55, phaseOff:  1.2,  yOff:   6 },
+          { alpha: 1.00, ampMult: 1.0,  freqMult: 1.3,  phaseOff: -0.6,  yOff:   0 },
+        ];
+
+        let fillY;
+        if (mode === 'rise') {
+          // Comes up from H+overshoot → lands just above 0 (slightly over the top)
+          fillY = H + 60 - easeInOutSine(progress) * (H + 120);
+        } else {
+          // Sinks back down: starts at just above 0, drops to H+overshoot
+          fillY = -(60 - progress * 60) + easeInSine(progress) * (H + 80);
+        }
+
+        // Amplitude: big in the middle of travel, zero at start/end (smooth entry & exit)
+        const amp = 30 * Math.sin(progress * Math.PI);
+
+        layers.forEach(l => {
+          const g = ctx.createLinearGradient(0, Math.min(fillY, 0), 0, H);
+          g.addColorStop(0,   `rgba(110,175,255,${l.alpha})`);
+          g.addColorStop(0.5, `rgba(65,125,225,${l.alpha})`);
+          g.addColorStop(1,   `rgba(25,72,195,${l.alpha})`);
+          ctx.fillStyle = g;
+
+          const surfY = fillY + l.yOff;
+          const wAmp  = amp * l.ampMult;
+          const ph    = phase + l.phaseOff;
+          const freq  = l.freqMult;
+
+          ctx.beginPath();
+          ctx.moveTo(0, H + 2);
+          ctx.lineTo(W, H + 2);
+          ctx.lineTo(W, surfY + Math.sin(freq * Math.PI * 2 + ph) * wAmp);
+          for (let x = W - 1; x >= 0; x--) {
+            const nx = x / W;
+            const y = surfY
+              + Math.sin(nx * freq * Math.PI * 2 + ph) * wAmp
+              + Math.sin(nx * freq * 0.55 * Math.PI * 2 - ph * 0.85) * wAmp * 0.38;
+            ctx.lineTo(x, y);
+          }
+          ctx.closePath();
+          ctx.fill();
+        });
+      }
+
+      let raf = null;
+      let running = false;
+
+      function runWave(onPeak) {
+        if (running) return;
+        running = true;
+        canvas.style.display = 'block';
+
+        const durIn  = 360;  // ms — wave rises up
+        const hold   = 20;   // ms — barely-there pause at peak
+        const durOut = 340;  // ms — wave sinks back down
+        let phase = 0;
+        let t0    = null;
+
+        function stepIn(ts) {
+          if (!t0) t0 = ts;
+          const t = Math.min((ts - t0) / durIn, 1);
+          phase += 0.06;
+          drawFrame(t, phase, 'rise');
+
+          if (t < 1) {
+            raf = requestAnimationFrame(stepIn);
+          } else {
+            // Solid fill for 1 frame so there's no gap, scroll happens here
+            ctx.fillStyle = 'rgba(45,100,210,1)';
+            ctx.fillRect(0, 0, W, H);
+            onPeak && onPeak();
+
+            setTimeout(() => {
+              let t1 = null;
+              function stepOut(ts) {
+                if (!t1) t1 = ts;
+                const t2 = Math.min((ts - t1) / durOut, 1);
+                phase += 0.065;
+                drawFrame(t2, phase, 'sink');
+                if (t2 < 1) {
+                  raf = requestAnimationFrame(stepOut);
+                } else {
+                  ctx.clearRect(0, 0, W, H);
+                  canvas.style.display = 'none';
+                  running = false;
+                }
+              }
+              raf = requestAnimationFrame(stepOut);
+            }, hold);
+          }
+        }
+        raf = requestAnimationFrame(stepIn);
+      }
+
+      // Nav link clicks
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const href   = a.getAttribute('href');
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          const hamburger = document.getElementById('hamburger');
+          const navLinks  = document.getElementById('nav-links');
+          const navOv     = document.getElementById('nav-overlay');
+          if (hamburger) hamburger.classList.remove('open');
+          if (navLinks)  navLinks.classList.remove('open');
+          if (navOv)     navOv.classList.remove('open');
+          runWave(() => { target.scrollIntoView({ behavior: 'instant' }); });
+        });
+      });
+
+      // Page-load: wave sinks down from full screen
+      canvas.style.display = 'block';
+      ctx.fillStyle = 'rgba(45,100,210,1)';
+      ctx.fillRect(0, 0, W, H);
+      let t0i = null;
+      const introDur = 520;
+      let introPhase = 0;
+      function introStep(ts) {
+        if (!t0i) t0i = ts;
+        const t = Math.min((ts - t0i) / introDur, 1);
+        introPhase += 0.06;
+        drawFrame(t, introPhase, 'sink');
+        if (t < 1) requestAnimationFrame(introStep);
+        else { ctx.clearRect(0, 0, W, H); canvas.style.display = 'none'; }
+      }
+      setTimeout(() => requestAnimationFrame(introStep), 60);
+
+    })();
+
+    /* HERO PARTICLES */
+    (function() {
+      const canvas = document.getElementById('hero-particles');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H, particles = [];
+
+      function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      function rand(min, max) { return Math.random() * (max - min) + min; }
+
+      function createParticle() {
+        return {
+          x: rand(0, W), y: rand(0, H),
+          r: rand(1.5, 4),
+          vx: rand(-0.3, 0.3), vy: rand(-0.5, -0.1),
+          alpha: rand(0.3, 0.8),
+          color: Math.random() > 0.5 ? '59,111,212' : '120,160,255'
+        };
+      }
+
+      for (let i = 0; i < 55; i++) particles.push(createParticle());
+
+      function tick() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach((p, i) => {
+          p.x += p.vx; p.y += p.vy;
+          p.alpha -= 0.0015;
+          if (p.alpha <= 0 || p.y < -10) particles[i] = Object.assign(createParticle(), { y: H + 5, alpha: rand(0.3, 0.7) });
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
+          ctx.fill();
+        });
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+
     /* HAMBURGER */
     const hamburger = document.getElementById('hamburger');
     const navLinks  = document.getElementById('nav-links');
@@ -280,7 +532,6 @@
       overlay.classList.toggle('open', isOpen);
     });
     overlay.addEventListener('click', closeMenu);
-    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMenu));
 
     /* SCROLL REVEAL */
     const ro = new IntersectionObserver((entries) => {
