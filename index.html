@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Joren</title>
+  <title>Joren Cools</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
@@ -47,16 +47,19 @@
     <h2>Een beetje<br>over <span class="accent">mij.</span></h2>
 
     <div class="about-top">
-      <div class="avatar">J</div>
+      <div class="avatar-wrap">
+        <img class="avatar-photo" src="Foto_joren.jpg" alt="Foto van Joren" />
+      </div>
       <div class="avatar-info">
-        <div class="name">Joren</div>
+        <div class="name">Joren Cools</div>
         <div class="meta">20 jaar &nbsp;·&nbsp; België 🇧🇪</div>
         <p class="bio-text">
           Hey! Ik ben Joren, 20 jaar oud en woonachtig in België. Ik ben iemand die graag dingen maakt — of dat nu code, designs of gewoon iets creatiefs is. Technologie fascineert me al van jongs af aan, en ik ben dan ook volop bezig mezelf verder te ontwikkelen in de digitale wereld.
         </p>
         <p class="bio-text">
-          Naast mijn studies vind ik het belangrijk om een goede balans te bewaren. Je vindt me dan ook regelmatig op het voetbalveld, in de keuken met een nieuw recept, of gewoon thuis achter mijn scherm met een goed spel of muziek op de achtergrond. Ik geloof erin dat nieuwsgierigheid de beste motor is om bij te leren.
+          Naast mijn studies vind ik het belangrijk om een goede balans te bewaren. Je vindt me dan ook regelmatig op het voetbalveld of gewoon thuis achter mijn scherm met een goed spel of muziek op de achtergrond. Ik geloof erin dat nieuwsgierigheid de beste motor is om bij te leren.
         </p>
+        <a href="CV_JorenCools.pdf" download class="btn btn-primary cv-btn">📄 Download mijn CV</a>
       </div>
     </div>
 
@@ -71,7 +74,7 @@
     </div>
 
     <!-- HIGHLIGHTS -->
-    <p class="sub-title" id="highlights">Highlights</p>
+    <p class="sub-title">Highlights</p>
     <div class="cards">
       <div class="card">
         <div class="card-icon" style="background:var(--blue-3);">🎓</div>
@@ -167,7 +170,6 @@
         </div>
       </div>
 
-
     </div>
   </section>
 
@@ -178,74 +180,101 @@
     <span class="about-label">Vaardigheden</span>
     <h2>Wat ik<br><span class="accent">kan.</span></h2>
 
-    <div class="skills-grid">
+    <!-- TALEN -->
+    <p class="sub-title">🌐 Talen</p>
+    <div class="lang-grid">
+      <div class="lang-card">
+        <div class="lang-name">Nederlands</div>
+        <div class="lang-dots">
+          <span class="dot dot--full"></span><span class="dot dot--full"></span><span class="dot dot--full"></span><span class="dot dot--full"></span><span class="dot dot--full"></span>
+        </div>
+        <div class="lang-level">Moedertaal</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Engels</div>
+        <div class="lang-dots">
+          <span class="dot dot--full"></span><span class="dot dot--full"></span><span class="dot dot--full"></span><span class="dot dot--full"></span><span class="dot dot--half"></span>
+        </div>
+        <div class="lang-level">Gevorderd</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Frans</div>
+        <div class="lang-dots">
+          <span class="dot dot--full"></span><span class="dot dot--full"></span><span class="dot dot--half"></span><span class="dot dot--empty"></span><span class="dot dot--empty"></span>
+        </div>
+        <div class="lang-level">Basis</div>
+      </div>
+    </div>
 
-      <div class="skill-group">
-        <p class="skill-group-title">Code</p>
-        <div class="skill-list">
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">HTML</span><span class="skill-pct">85%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">CSS</span><span class="skill-pct">75%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">Python</span><span class="skill-pct">60%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:60%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">PHP</span><span class="skill-pct">65%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">JavaScript</span><span class="skill-pct">50%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:50%"></div></div>
-          </div>
+    <!-- HARD SKILLS -->
+    <p class="sub-title">💻 Hard Skills</p>
+    <div class="skill-blocks">
+
+      <div class="skill-block">
+        <div class="skill-block-title">Programmeertalen</div>
+        <div class="skill-tags">
+          <span class="stag stag-code">Python</span>
+          <span class="stag stag-code">Java</span>
+          <span class="stag stag-code">C++</span>
+          <span class="stag stag-code">JavaScript</span>
+          <span class="stag stag-code">PHP</span>
         </div>
       </div>
 
-      <div class="skill-group">
-        <p class="skill-group-title">Tools</p>
-        <div class="skill-list">
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">VS Code</span><span class="skill-pct">90%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">GitHub</span><span class="skill-pct">70%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">Figma</span><span class="skill-pct">65%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">Photoshop</span><span class="skill-pct">55%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:55%"></div></div>
-          </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Webontwikkeling</div>
+        <div class="skill-tags">
+          <span class="stag stag-web">HTML</span>
+          <span class="stag stag-web">CSS</span>
         </div>
       </div>
 
-      <div class="skill-group">
-        <p class="skill-group-title">JetBrains</p>
-        <div class="skill-list">
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">PhpStorm</span><span class="skill-pct">75%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">PyCharm</span><span class="skill-pct">65%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-top"><span class="skill-name">IntelliJ IDEA</span><span class="skill-pct">60%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:60%"></div></div>
-          </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Tools & Omgevingen</div>
+        <div class="skill-tags">
+          <span class="stag stag-tool">VS Code</span>
+          <span class="stag stag-tool">Git</span>
+          <span class="stag stag-tool">GitHub</span>
+          <span class="stag stag-tool">Figma</span>
+          <span class="stag stag-tool">Adobe Photoshop</span>
+          <span class="stag stag-tool">PhpStorm</span>
+          <span class="stag stag-tool">PyCharm</span>
+          <span class="stag stag-tool">IntelliJ IDEA</span>
         </div>
       </div>
 
+      <div class="skill-block">
+        <div class="skill-block-title">Databeheer</div>
+        <div class="skill-tags">
+          <span class="stag stag-db">SQL</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SOFT SKILLS -->
+    <p class="sub-title">🤝 Soft Skills</p>
+    <div class="soft-grid">
+      <div class="soft-card">
+        <div class="soft-icon">🧩</div>
+        <div class="soft-name">Probleemoplossend denken</div>
+      </div>
+      <div class="soft-card">
+        <div class="soft-icon">👥</div>
+        <div class="soft-name">Teamwork</div>
+      </div>
+      <div class="soft-card">
+        <div class="soft-icon">💬</div>
+        <div class="soft-name">Communicatie</div>
+      </div>
+      <div class="soft-card">
+        <div class="soft-icon">🔄</div>
+        <div class="soft-name">Aanpassingsvermogen</div>
+      </div>
+      <div class="soft-card">
+        <div class="soft-icon">⏱️</div>
+        <div class="soft-name">Time management</div>
+      </div>
     </div>
 
   </section>
@@ -264,20 +293,19 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        <a href="mailto:coolsjoren@gmail.com" class="footer-link" aria-label="Email">
+        <a href="/cdn-cgi/l/email-protection#82e1ededeef1e8edf0e7ecc2e5efe3ebeeace1edef" class="footer-link" aria-label="Email">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           E-mail
         </a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Joren — Alle rechten voorbehouden</span>
+      <span>© 2026 Joren Cools — Alle rechten voorbehouden</span>
       <a href="#home" class="footer-top-btn">Terug naar boven ↑</a>
     </div>
   </footer>
 
-  <script>
-    // Scroll-reveal for timeline and skill cards
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(el => {
         if (el.isIntersecting) {
@@ -287,9 +315,8 @@
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.tl-item, .card, .fact, .skill-group').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Cursor glow
     const glow = document.createElement('div');
     glow.className = 'cursor-glow';
     document.body.appendChild(glow);
@@ -298,65 +325,19 @@
       glow.style.top  = e.clientY + 'px';
     });
 
-    // Nav shrink on scroll
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
-      nav.style.padding = window.scrollY > 60 ? '.8rem 3rem' : '';
-      nav.style.boxShadow = window.scrollY > 60 ? '0 4px 24px rgba(12,26,56,.08)' : '';
+      nav.classList.toggle('nav-scrolled', window.scrollY > 30);
     }, { passive: true });
 
-    // Active nav highlight on scroll
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
-      let current = '';
+      let current = 'home';
       sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+        if (window.scrollY >= s.offsetTop - 180) current = s.id;
       });
       navLinks.forEach(a => {
         a.classList.toggle('nav-active', a.getAttribute('href') === '#' + current);
       });
-    }, { passive: true });
-  </script>
-
-  <style>
-    /* Scroll-reveal states */
-    .tl-item, .card, .fact, .skill-group {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .55s ease, transform .55s ease;
-    }
-    .tl-item.visible, .card.visible, .fact.visible, .skill-group.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .tl-item:nth-child(1) { transition-delay: .05s; }
-    .tl-item:nth-child(2) { transition-delay: .12s; }
-    .tl-item:nth-child(3) { transition-delay: .19s; }
-    .tl-item:nth-child(4) { transition-delay: .26s; }
-    .tl-item:nth-child(5) { transition-delay: .33s; }
-    .card:nth-child(1) { transition-delay: .05s; }
-    .card:nth-child(2) { transition-delay: .13s; }
-    .card:nth-child(3) { transition-delay: .21s; }
-    .fact:nth-child(1) { transition-delay: .04s; }
-    .fact:nth-child(2) { transition-delay: .09s; }
-    .fact:nth-child(3) { transition-delay: .14s; }
-    .fact:nth-child(4) { transition-delay: .19s; }
-    .fact:nth-child(5) { transition-delay: .24s; }
-    .skill-group:nth-child(1) { transition-delay: .05s; }
-    .skill-group:nth-child(2) { transition-delay: .13s; }
-    .skill-group:nth-child(3) { transition-delay: .21s; }
-
-    /* Cursor glow */
-    .cursor-glow {
-      position: fixed; pointer-events: none; z-index: 0;
-      width: 320px; height: 320px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(59,111,212,.09) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      transition: left .12s ease, top .12s ease;
-    }
-
-    /* Active nav link */
-    .nav-links a.nav-active { color: var(--ink); }
-  </style>
+    }, { passive:
