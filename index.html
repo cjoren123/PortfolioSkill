@@ -9,30 +9,33 @@
 </head>
 <body>
 
-  <nav>
+  <nav id="navbar">
     <a class="nav-logo" href="#home">Joren.</a>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-active">Home</a></li>
       <li><a href="#about">Over mij</a></li>
       <li><a href="#opleiding">Opleiding</a></li>
       <li><a href="#skills">Vaardigheden</a></li>
     </ul>
   </nav>
+  <div class="nav-overlay" id="nav-overlay"></div>
 
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
 
-  <!-- ── HERO ── -->
   <section id="home">
     <div class="hero-inner">
-      <span class="hero-tag">👋 Hallo daar</span>
-      <h1>Hoi, ik ben<br><span class="accent">Joren.</span></h1>
-      <p class="hero-sub">
+      <span class="hero-tag fade-up" style="--d:0ms">👋 Hallo daar</span>
+      <h1 class="fade-up" style="--d:120ms">Hoi, ik ben<br><span class="accent">Joren.</span></h1>
+      <p class="hero-sub fade-up" style="--d:240ms">
         Ik ben 20 jaar oud en dit is mijn kleine plekje op het internet.
         Kijk gerust rond en leer me een beetje beter kennen.
       </p>
-      <div class="hero-actions">
+      <div class="hero-actions fade-up" style="--d:360ms">
         <a href="#about" class="btn btn-primary">Over mij →</a>
         <a href="#skills" class="btn btn-outline">Vaardigheden</a>
       </div>
@@ -41,12 +44,11 @@
 
   <hr class="divider"/>
 
-  <!-- ── ABOUT ── -->
   <section id="about">
-    <span class="about-label">Over mij</span>
-    <h2>Een beetje<br>over <span class="accent">mij.</span></h2>
+    <span class="about-label scroll-reveal">Over mij</span>
+    <h2 class="scroll-reveal">Een beetje<br>over <span class="accent">mij.</span></h2>
 
-    <div class="about-top">
+    <div class="about-top scroll-reveal">
       <div class="avatar-wrap">
         <img class="avatar-photo" src="Foto_joren.jpg" alt="Foto van Joren" />
       </div>
@@ -63,9 +65,8 @@
       </div>
     </div>
 
-    <!-- QUICK FACTS -->
-    <p class="sub-title">Snelle feiten</p>
-    <div class="facts">
+    <p class="sub-title scroll-reveal">Snelle feiten</p>
+    <div class="facts scroll-reveal">
       <div class="fact"><div class="fact-label">Leeftijd</div><div class="fact-value">20</div></div>
       <div class="fact"><div class="fact-label">Woonplaats</div><div class="fact-value">België 🇧🇪</div></div>
       <div class="fact"><div class="fact-label">Opleiding</div><div class="fact-value">Toegepaste Informatica</div></div>
@@ -73,29 +74,27 @@
       <div class="fact"><div class="fact-label">Talen</div><div class="fact-value">Nederlands · Engels</div></div>
     </div>
 
-    <!-- HIGHLIGHTS -->
-    <p class="sub-title">Highlights</p>
+    <p class="sub-title scroll-reveal">Highlights</p>
     <div class="cards">
-      <div class="card">
+      <div class="card scroll-reveal">
         <div class="card-icon" style="background:var(--blue-3);">🎓</div>
         <p class="card-title">Momenteel studerend</p>
         <p class="card-body">Volop bezig met mijn studies terwijl ik elke dag nieuwe dingen ontdek. Altijd klaar om bij te leren.</p>
       </div>
-      <div class="card">
+      <div class="card scroll-reveal" style="--d:80ms">
         <div class="card-icon" style="background:var(--blue-1);">💡</div>
         <p class="card-title">Creatieve insteek</p>
         <p class="card-body">Ik houd van projecten waarbij ik design en technologie kan combineren tot iets dat er goed uitziet én werkt.</p>
       </div>
-      <div class="card">
+      <div class="card scroll-reveal" style="--d:160ms">
         <div class="card-icon" style="background:var(--blue-4);">🇧🇪</div>
         <p class="card-title">Gevestigd in België</p>
         <p class="card-body">Woon en groei in België, maar nieuwsgierig naar de wereld daarbuiten.</p>
       </div>
     </div>
 
-    <!-- INTERESTS -->
-    <p class="sub-title">Interesses & hobby's</p>
-    <div class="pills">
+    <p class="sub-title scroll-reveal">Interesses & hobby's</p>
+    <div class="pills scroll-reveal">
       <span class="pill c1">🎵 Muziek</span>
       <span class="pill c4">🎮 Gaming</span>
       <span class="pill c2">✈️ Reizen</span>
@@ -107,16 +106,12 @@
 
   <hr class="divider"/>
 
-  <!-- ── OPLEIDING ── -->
   <section id="opleiding">
-    <span class="about-label">Opleiding</span>
-    <h2>Mijn<br><span class="accent">Opleiding.</span></h2>
-
+    <span class="about-label scroll-reveal">Opleiding</span>
+    <h2 class="scroll-reveal">Mijn<br><span class="accent">Opleiding.</span></h2>
     <div class="timeline">
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
+      <div class="tl-item scroll-reveal">
+        <div class="tl-dot"></div><div class="tl-line"></div>
         <div class="tl-card">
           <div class="tl-year">2018 – 2020</div>
           <div class="tl-school">Sint-Aloysiuscollege Geel</div>
@@ -124,10 +119,8 @@
           <p class="tl-desc">1ste & 2de middelbaar — Een sterke wetenschappelijke en technologische basis gelegd.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
+      <div class="tl-item scroll-reveal">
+        <div class="tl-dot"></div><div class="tl-line"></div>
         <div class="tl-card">
           <div class="tl-year">2020 – 2022</div>
           <div class="tl-school">Sint-Jozefscollege Geel</div>
@@ -135,10 +128,8 @@
           <p class="tl-desc">3de & 4de middelbaar — Combinatie van mechanica, elektronica en informatica.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
+      <div class="tl-item scroll-reveal">
+        <div class="tl-dot"></div><div class="tl-line"></div>
         <div class="tl-card">
           <div class="tl-year">2022 – 2024</div>
           <div class="tl-school">Sint-Jozefscollege Geel</div>
@@ -146,10 +137,8 @@
           <p class="tl-desc">5de & 6de middelbaar — Verdieping in elektronica en informatica, met een focus op ICT-systemen.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
+      <div class="tl-item scroll-reveal">
+        <div class="tl-dot"></div><div class="tl-line"></div>
         <div class="tl-card">
           <div class="tl-year">2024 – 2025</div>
           <div class="tl-school">Thomas More Geel</div>
@@ -157,10 +146,8 @@
           <p class="tl-desc">1ste jaar hoger onderwijs — Transitie naar professionele bachelor, brede informatica-fundamenten.</p>
         </div>
       </div>
-
-      <div class="tl-item tl-item--active">
-        <div class="tl-dot tl-dot--active"></div>
-        <div class="tl-line"></div>
+      <div class="tl-item tl-item--active scroll-reveal">
+        <div class="tl-dot tl-dot--active"></div><div class="tl-line"></div>
         <div class="tl-card">
           <div class="tl-year">2025 – heden</div>
           <div class="tl-school">Thomas More Geel</div>
@@ -169,20 +156,17 @@
           <span class="tl-badge">Huidig</span>
         </div>
       </div>
-
     </div>
   </section>
 
   <hr class="divider"/>
 
-  <!-- ── SKILLS ── -->
   <section id="skills">
-    <span class="about-label">Vaardigheden</span>
-    <h2>Wat ik<br><span class="accent">kan.</span></h2>
+    <span class="about-label scroll-reveal">Vaardigheden</span>
+    <h2 class="scroll-reveal">Wat ik<br><span class="accent">kan.</span></h2>
 
-    <!-- TALEN -->
-    <p class="sub-title">🌐 Talen</p>
-    <div class="lang-grid">
+    <p class="sub-title scroll-reveal">🌐 Talen</p>
+    <div class="lang-grid scroll-reveal">
       <div class="lang-card">
         <div class="lang-name">Nederlands</div>
         <div class="lang-dots">
@@ -206,10 +190,8 @@
       </div>
     </div>
 
-    <!-- HARD SKILLS -->
-    <p class="sub-title">💻 Hard Skills</p>
-    <div class="skill-blocks">
-
+    <p class="sub-title scroll-reveal">💻 Hard Skills</p>
+    <div class="skill-blocks scroll-reveal">
       <div class="skill-block">
         <div class="skill-block-title">Programmeertalen</div>
         <div class="skill-tags">
@@ -220,7 +202,6 @@
           <span class="stag stag-code">PHP</span>
         </div>
       </div>
-
       <div class="skill-block">
         <div class="skill-block-title">Webontwikkeling</div>
         <div class="skill-tags">
@@ -228,7 +209,6 @@
           <span class="stag stag-web">CSS</span>
         </div>
       </div>
-
       <div class="skill-block">
         <div class="skill-block-title">Tools & Omgevingen</div>
         <div class="skill-tags">
@@ -242,48 +222,27 @@
           <span class="stag stag-tool">IntelliJ IDEA</span>
         </div>
       </div>
-
       <div class="skill-block">
         <div class="skill-block-title">Databeheer</div>
         <div class="skill-tags">
           <span class="stag stag-db">SQL</span>
         </div>
       </div>
-
     </div>
 
-    <!-- SOFT SKILLS -->
-    <p class="sub-title">🤝 Soft Skills</p>
-    <div class="soft-grid">
-      <div class="soft-card">
-        <div class="soft-icon">🧩</div>
-        <div class="soft-name">Probleemoplossend denken</div>
-      </div>
-      <div class="soft-card">
-        <div class="soft-icon">👥</div>
-        <div class="soft-name">Teamwork</div>
-      </div>
-      <div class="soft-card">
-        <div class="soft-icon">💬</div>
-        <div class="soft-name">Communicatie</div>
-      </div>
-      <div class="soft-card">
-        <div class="soft-icon">🔄</div>
-        <div class="soft-name">Aanpassingsvermogen</div>
-      </div>
-      <div class="soft-card">
-        <div class="soft-icon">⏱️</div>
-        <div class="soft-name">Time management</div>
-      </div>
+    <p class="sub-title scroll-reveal">🤝 Soft Skills</p>
+    <div class="soft-grid scroll-reveal">
+      <div class="soft-card"><div class="soft-icon">🧩</div><div class="soft-name">Probleemoplossend denken</div></div>
+      <div class="soft-card"><div class="soft-icon">👥</div><div class="soft-name">Teamwork</div></div>
+      <div class="soft-card"><div class="soft-icon">💬</div><div class="soft-name">Communicatie</div></div>
+      <div class="soft-card"><div class="soft-icon">🔄</div><div class="soft-name">Aanpassingsvermogen</div></div>
+      <div class="soft-card"><div class="soft-icon">⏱️</div><div class="soft-name">Time management</div></div>
     </div>
-
   </section>
 
   <footer>
     <div class="footer-inner">
-      <div class="footer-left">
-        <a class="footer-logo" href="#home">Joren.</a>
-      </div>
+      <a class="footer-logo" href="#home">Joren.</a>
       <div class="footer-links">
         <a href="https://github.com/cjoren123" target="_blank" class="footer-link" aria-label="GitHub">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
@@ -293,7 +252,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        <a href="/cdn-cgi/l/email-protection#82e1ededeef1e8edf0e7ecc2e5efe3ebeeace1edef" class="footer-link" aria-label="Email">
+        <a href="mailto:coolsjoren@gmail.com" class="footer-link" aria-label="Email">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           E-mail
         </a>
@@ -305,39 +264,52 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(el => {
-        if (el.isIntersecting) {
-          el.target.classList.add('visible');
-          observer.unobserve(el.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    const glow = document.createElement('div');
-    glow.className = 'cursor-glow';
-    document.body.appendChild(glow);
-    document.addEventListener('mousemove', e => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top  = e.clientY + 'px';
+  <script>
+    /* HAMBURGER */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    const overlay   = document.getElementById('nav-overlay');
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+      overlay.classList.remove('open');
+    }
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      overlay.classList.toggle('open', isOpen);
     });
+    overlay.addEventListener('click', closeMenu);
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMenu));
 
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav-scrolled', window.scrollY > 30);
-    }, { passive: true });
+    /* SCROLL REVEAL */
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.scroll-reveal').forEach(el => ro.observe(el));
 
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    /* CURSOR GLOW — desktop only */
+    if (window.matchMedia('(pointer:fine)').matches) {
+      const g = document.createElement('div');
+      g.className = 'cursor-glow';
+      document.body.appendChild(g);
+      document.addEventListener('mousemove', e => { g.style.left = e.clientX+'px'; g.style.top = e.clientY+'px'; });
+    }
+
+    /* NAV SCROLL */
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nav.classList.toggle('nav-scrolled', scrollY > 30), { passive:true });
+
+    /* ACTIVE LINK */
+    const secs  = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
-      let current = 'home';
-      sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 180) current = s.id;
-      });
-      navLinks.forEach(a => {
-        a.classList.toggle('nav-active', a.getAttribute('href') === '#' + current);
-      });
-    }, { passive:
+      let cur = 'home';
+      secs.forEach(s => { if (scrollY >= s.offsetTop - 180) cur = s.id; });
+      links.forEach(a => a.classList.toggle('nav-active', a.getAttribute('href') === '#'+cur));
+    }, { passive:true });
+  </script>
+</body>
+</html>
